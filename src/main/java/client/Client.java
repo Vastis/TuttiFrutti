@@ -2,11 +2,9 @@ package client;
 
 import utils.FileReader;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class Client extends Thread {
 
@@ -17,6 +15,11 @@ public class Client extends Thread {
 
     public Client() {
         FileReader reader = new FileReader("config");
+        try {
+            reader.setScanner(new Scanner(reader.getFile()));
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to find file: " + reader.getFile());
+        }
         this.serverIP = reader.getScanner().nextLine();
         this.serverPort = reader.getScanner().nextInt();
         this.uid = ++id;
@@ -29,6 +32,7 @@ public class Client extends Thread {
             PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer.println(reader.readLine() + " I'm player " + uid);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

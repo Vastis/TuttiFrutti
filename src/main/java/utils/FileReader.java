@@ -12,15 +12,15 @@ public class FileReader {
         this.file = new File(getClass().getClassLoader().getResource(fileName).getFile());
     }
 
-    private void readConnectionConfig(){
-        try {
-            scanner = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+    public File getFile() {
+        return file;
     }
 
     public Scanner getScanner() {
         return scanner;
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 }
