@@ -1,10 +1,9 @@
 package client;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import utils.FileReader;
+
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -15,22 +14,16 @@ public class Client extends Thread {
     private int uid;
     private String serverIP;
     private int serverPort;
+    private FileReader reader;
 
     public Client(){
-        this.readConnectionConfig();
+        this.reader = new FileReader("config");
+        this.serverIP = reader.getScanner().nextLine();
+        this.serverPort = reader.getScanner().nextInt();
         this.uid = ++id;
     }
 
-    private void readConnectionConfig(){
-        File file = new File(getClass().getClassLoader().getResource("config").getFile());
-        try {
-            Scanner scanner = new Scanner(file);
-            this.serverIP = scanner.nextLine();
-            this.serverPort = scanner.nextInt();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     @Override
     public void run(){
