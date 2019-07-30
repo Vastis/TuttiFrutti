@@ -4,7 +4,6 @@ import utils.FileReader;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class Client extends Thread {
 
@@ -15,11 +14,7 @@ public class Client extends Thread {
 
     public Client() {
         FileReader reader = new FileReader("config");
-        try {
-            reader.setScanner(new Scanner(reader.getFile()));
-        } catch (FileNotFoundException e) {
-            System.out.println("Unable to find file: " + reader.getFile());
-        }
+
         this.serverIP = reader.getScanner().nextLine();
         this.serverPort = reader.getScanner().nextInt();
         this.uid = ++id;
@@ -32,6 +27,8 @@ public class Client extends Thread {
             PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer.println(reader.readLine() + " I'm player " + uid);
+            System.out.println(this.serverIP);
+            System.out.println(this.serverPort);
 
         } catch (IOException e) {
             e.printStackTrace();
