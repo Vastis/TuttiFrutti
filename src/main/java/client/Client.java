@@ -14,10 +14,9 @@ public class Client extends Thread {
     private int uid;
     private String serverIP;
     private int serverPort;
-    private FileReader reader;
 
     public Client() {
-        this.reader = new FileReader("config");
+        FileReader reader = new FileReader("config");
         this.serverIP = reader.getScanner().nextLine();
         this.serverPort = reader.getScanner().nextInt();
         this.uid = ++id;
