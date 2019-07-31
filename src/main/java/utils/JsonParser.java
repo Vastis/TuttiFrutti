@@ -28,7 +28,7 @@ public class JsonParser<T extends Wrapper> {
 
     public T toJsonObject(String jsonString){
         T wrapper = new Gson().fromJson(jsonString, this.genericClass);
-        wrapper.checkCompleteness();
+        wrapper.initialize();
         return wrapper;
     }
 
@@ -36,10 +36,15 @@ public class JsonParser<T extends Wrapper> {
         try {
             URL resource = JsonParser.class.getResource(filename);
             String filepath = Files.readString(new File(resource.getFile()).toPath());
-            String json = new Gson().toJson(jsonObject);
+            String json = toJson(jsonObject);
             //TODO: save to file :D
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String toJson(T jsonObject) {
+        String json = new Gson().toJson(jsonObject);
+        return json;
     }
 }

@@ -1,0 +1,6 @@
+{
+  "frameType": "ORDER_ASSIGNMENT",
+  "content": {
+    "order": 123
+  }
+}

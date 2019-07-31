@@ -13,7 +13,6 @@ public class Player extends Client {
         super();
         initWindow();
     }
-
     private void initWindow() {
         //TODO
     }

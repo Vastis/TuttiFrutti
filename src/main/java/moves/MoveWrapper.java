@@ -4,7 +4,7 @@ import utils.Wrapper;
 
 public class MoveWrapper extends Wrapper {
     @Override
-    public void checkCompleteness() throws NullPointerException {
+    public void initialize() throws NullPointerException {
 
     }
 }
