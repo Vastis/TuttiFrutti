@@ -1,6 +1,6 @@
 package cards;
 
-import actions.Action;
+import actions.*;
 
 public class ActionCard extends Card {
     enum actionCategory {
@@ -22,7 +22,26 @@ public class ActionCard extends Card {
     }
 
     private Action initAction() {
-        //TODO
+        switch (this.name){
+            case "Commander":
+                return new Commander();
+            case "Deserter":
+                return new Deserter();
+            case "Fog":
+                return new Fog();
+            case "Mud":
+                return new Mud();
+            case "Regroup":
+                return new Regroup();
+            case "Reinforcements":
+                return new Regroup();
+            case "Scout":
+                return new Scout();
+            case "Squire":
+                return new Squire();
+            case "Traitor":
+                return new Traitor();
+        }
         return null;
     }
 
