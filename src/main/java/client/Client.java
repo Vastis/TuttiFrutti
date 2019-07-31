@@ -27,8 +27,6 @@ public class Client extends Thread {
             PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer.println(reader.readLine() + " I'm player " + uid);
-            System.out.println(this.serverIP);
-            System.out.println(this.serverPort);
 
         } catch (IOException e) {
             e.printStackTrace();
