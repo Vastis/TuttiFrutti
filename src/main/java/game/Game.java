@@ -4,38 +4,34 @@ public class Game {
 
     private static Game game;
 
-    private Game(){
-        initGameParts();
-    }
+    private Game(){}
+
     public static Game getInstance(){
         if(game == null)
             game = new Game();
         return game;
     }
 
-    private void initGameParts() {
+    public void start(){
+        generateCards();
+        shuffleCards();
+        dealFirstSix();
+    }
+    private void generateCards() {
+        //TODO
+    }
+    private void shuffleCards() {
+        //TODO
+    }
+    private void dealFirstSix() {
         //TODO
     }
 
-    public void start(){
-
-    }
     public void run(String msg){
-
+        //TODO
     }
+
     public void stop(){
         game = null;
     }
-    public void pause(){
-
-    }
-    public void resume(){
-
-    }
-    /*System.out.println("ready");
-        for(SocketManager c : this.clients){
-            Log.write("Server: Hi!");
-            c.write("Hi!");
-            Log.write("Client: " + c.read());
-        }*/
 }

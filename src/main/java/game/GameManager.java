@@ -30,12 +30,6 @@ public class GameManager extends Server {
                     Game.getInstance().start();
                     this.state = AppState.RUNNING;
                     break;
-                /*case PAUSED:
-                    Game.getInstance().pause();
-                    break;
-                case RESUMED:
-                    Game.getInstance().resume();
-                    break;*/
                 case RUNNING:
                     try {
                         String playerResponse = manageResponse();
@@ -58,7 +52,7 @@ public class GameManager extends Server {
     }
 
     private String manageResponse() throws IOException {
-        //TODO
+        //String response = this.playerMoving.read();
         return "";
     }
 
@@ -73,9 +67,5 @@ public class GameManager extends Server {
         SocketManager tmp = this.playerWaiting;
         this.playerWaiting = this.playerMoving;
         this.playerMoving = tmp;
-    }
-
-    public void setState(AppState state) {
-        this.state = state;
     }
 }
