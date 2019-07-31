@@ -1,16 +1,15 @@
-import client.Client;
-import server.Server;
+import game.GameManager;
+import game.Player;
 
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         try {
-            new Server(6789).start();
-            new Client().start();
-            new Client().start();
+            new Player().start();
         } catch (IOException e) {
-            e.printStackTrace();
+            new GameManager().start();
+            new Player().start();
         }
     }
 }
