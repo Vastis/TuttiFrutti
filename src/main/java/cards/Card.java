@@ -1,6 +1,6 @@
 package cards;
 
-public class Card {
+public  class Card {
     enum cardType {
         STONE,
         CLAN,
@@ -12,4 +12,9 @@ public class Card {
     public Card(cardType type) {
         this.type = type;
     }
+
+    public cardType getType() {
+        return type;
+    }
+
 }

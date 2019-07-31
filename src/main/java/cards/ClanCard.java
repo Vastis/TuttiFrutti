@@ -17,12 +17,7 @@ public class ClanCard extends Card {
     public ClanCard(cardType type, cardColor color, int value) {
         super(type);
         this.color = color;
-        if (value >= 1 && value <= 9) {
-            this.value = value;
-        }
-        else {
-            System.out.println("Value does not fall within the expected range");
-        }
+        this.value = value;
     }
 
     public cardColor getColor() {
@@ -32,4 +27,6 @@ public class ClanCard extends Card {
     public int getValue() {
         return value;
     }
+
+
 }

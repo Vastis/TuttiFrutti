@@ -1,18 +1,6 @@
 package cards;
 
 public class ActionCard extends Card {
-    enum actionName {
-        COMMANDER,
-        REINFORCEMENTS,
-        SQUIRE,
-        MUD,
-        FOG,
-        DESERTER,
-        TRAITOR,
-        SCOUT,
-        REGROUP
-    }
-
     enum actionCategory {
         TERRAIN,
         MORALE,
@@ -20,12 +8,19 @@ public class ActionCard extends Card {
     }
 
     private actionCategory category;
-    private actionName name;
+    private String name;
 
-    public ActionCard(cardType type, actionCategory category, actionName name) {
+    public ActionCard(cardType type, actionCategory category, String name) {
         super(type);
         this.category = category;
         this.name = name;
     }
 
+    public actionCategory getCategory() {
+        return category;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

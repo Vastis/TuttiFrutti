@@ -1,3 +1,7 @@
+import cards.ActionCard;
+import cards.Card;
+import cards.ClanCard;
+import cards.Deck;
 import client.Client;
 import server.Server;
 
@@ -12,5 +16,9 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Deck actionDeck = new Deck(Deck.deckType.ACTION);
+        Deck clanDeck = new Deck(Deck.deckType.CLAN);
+
+
     }
 }
