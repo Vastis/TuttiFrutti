@@ -46,7 +46,7 @@ public class Deck {
                 break;
             case STONE:
                 for (int i = 1; i <= 9; ++i) {
-                    this.cards.add(new StoneCard(Card.cardType.STONE));
+                    this.cards.add(new StoneSlot(Card.cardType.STONE));
                 }
             default:
                 System.out.println("Type of deck is not defined");

@@ -1,15 +1,14 @@
 package cards;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 
-public class StoneCard extends Card {
+public class StoneSlot extends Card {
     private LinkedList<Card> player1 = new LinkedList<>();
     private LinkedList<Card> player2 = new LinkedList<>();
-    private HashSet<ActionCard> terrainCards = new HashSet<>();
+    private LinkedList<ActionCard> terrainCards = new LinkedList<>();
     private boolean ifTaken;
 
-    public StoneCard(cardType type) {
+    public StoneSlot(cardType type) {
         super(type);
         ifTaken = false;
     }
