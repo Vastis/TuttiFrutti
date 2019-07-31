@@ -1,7 +1,7 @@
 package cards;
 
 public class ClanCard extends Card {
-    enum cardColor {
+    public enum cardColor {
         RED,
         BLUE,
         PURPLE,

@@ -1,6 +1,32 @@
 {
-  "frameType": "ORDER_ASSIGNMENT",
+  "frameType": "DEAL_CARDS",
   "content": {
-    "order": 123
+    "cards": [
+      {
+        "color": "RED",
+        "value": 7,
+        "type": "CLAN"
+      },{
+        "color": "RED",
+        "value": 3,
+        "type": "CLAN"
+      },{
+        "color": "GREEN",
+        "value": 7,
+        "type": "CLAN"
+      },{
+        "color": "YELLOW",
+        "value": 5,
+        "type": "CLAN"
+      },{
+        "color": "BROWN",
+        "value": 3,
+        "type": "CLAN"
+      },{
+        "color": "BROWN",
+        "value": 1,
+        "type": "CLAN"
+      }
+    ]
   }
 }

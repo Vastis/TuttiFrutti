@@ -24,7 +24,16 @@ public class FrameWrapper extends Wrapper {
                 this.contentWrapper = new JsonParser<>(OrderAssignmentWrapper.class)
                         .toJsonObject(this.content.toString());
                 break;
+            case DEAL_CARDS:
+                this.contentWrapperClass = DealCardsWrapper.class;
+                this.contentWrapper = new JsonParser<>(DealCardsWrapper.class)
+                        .toJsonObject(this.content.toString());
+                break;
         }
+    }
+
+    public static String normalize(String json){
+        return json.replace("contentWrapper", "content");
     }
 
     public void print(){
