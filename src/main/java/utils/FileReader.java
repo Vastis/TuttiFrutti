@@ -20,5 +20,5 @@ public class FileReader {
     public Scanner getScanner() {
         return scanner;
     }
-    
+
 }
