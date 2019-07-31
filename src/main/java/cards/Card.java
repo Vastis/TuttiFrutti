@@ -1,7 +1,7 @@
 package cards;
 
 public  class Card {
-    enum cardType {
+    public enum cardType {
         STONE,
         CLAN,
         ACTION

@@ -4,15 +4,11 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public class Deck {
-    public enum deckType {
-        ACTION,
-        CLAN
-    }
 
-    private deckType type;
+    private Card.cardType type;
     private LinkedList<Card> cards = new LinkedList<>();
 
-    public Deck(deckType type) {
+    public Deck(Card.cardType type) {
         this.type = type;
         this.setDeck();
     }
@@ -48,10 +44,14 @@ public class Deck {
                     }
                 }
                 break;
+            case STONE:
+                for (int i = 1; i <= 9; ++i) {
+                    this.cards.add(new StoneCard(Card.cardType.STONE));
+                }
             default:
                 System.out.println("Type of deck is not defined");
         }
-//        this.shuffle();
+        this.shuffle();
     }
 
     private void shuffle() {

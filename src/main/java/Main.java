@@ -16,8 +16,9 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Deck actionDeck = new Deck(Deck.deckType.ACTION);
-        Deck clanDeck = new Deck(Deck.deckType.CLAN);
+        Deck actionDeck = new Deck(Card.cardType.ACTION);
+        Deck clanDeck = new Deck(Card.cardType.CLAN);
+        Deck stoneDeck = new Deck(Card.cardType.STONE);
 
 
     }
