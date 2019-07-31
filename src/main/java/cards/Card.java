@@ -1,6 +1,6 @@
 package cards;
 
-public  class Card {
+public abstract class Card {
     public enum cardType {
         STONE,
         CLAN,
@@ -16,5 +16,7 @@ public  class Card {
     public cardType getType() {
         return type;
     }
+
+    public abstract void print();
 
 }

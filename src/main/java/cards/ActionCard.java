@@ -1,7 +1,9 @@
 package cards;
 
-public class ActionCard extends Card {
-    enum actionCategory {
+import communication.ContentWrapper;
+
+public class ActionCard extends Card implements ContentWrapper {
+    public enum actionCategory {
         TERRAIN,
         MORALE,
         SPECIAL
@@ -23,4 +25,11 @@ public class ActionCard extends Card {
     public String getName() {
         return name;
     }
+
+    @Override
+    public void print() {
+        System.out.println(this.category + " " + this.name + " " + this.getType());
+    }
+    @Override
+    public void initialize() throws NullPointerException {}
 }

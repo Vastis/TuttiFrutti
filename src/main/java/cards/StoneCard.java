@@ -12,4 +12,6 @@ public class StoneCard extends Card {
         super(type);
     }
 
+    @Override
+    public void print() { }
 }

@@ -1,3 +1,4 @@
+import cards.ActionCard;
 import cards.Card;
 import cards.ClanCard;
 import communication.DealCardsWrapper;
@@ -16,12 +17,12 @@ public class Main {
         fw.print();
 
         String type = "DEAL_CARDS";
-        LinkedList<ClanCard> cards = new LinkedList<>();
+        LinkedList<Card> cards = new LinkedList<>();
         cards.add(new ClanCard(Card.cardType.CLAN, ClanCard.cardColor.BROWN, 4));
-        cards.add(new ClanCard(Card.cardType.CLAN, ClanCard.cardColor.BROWN, 9));
+        cards.add(new ActionCard(Card.cardType.ACTION, ActionCard.actionCategory.TERRAIN, "typo"));
         cards.add(new ClanCard(Card.cardType.CLAN, ClanCard.cardColor.RED, 3));
         cards.add(new ClanCard(Card.cardType.CLAN, ClanCard.cardColor.RED, 2));
-        cards.add(new ClanCard(Card.cardType.CLAN, ClanCard.cardColor.GREEN, 4));
+        cards.add(new ActionCard(Card.cardType.ACTION, ActionCard.actionCategory.TERRAIN, "typo"));
         cards.add(new ClanCard(Card.cardType.CLAN, ClanCard.cardColor.GREEN, 7));
         cards.add(new ClanCard(Card.cardType.CLAN, ClanCard.cardColor.GREEN, 1));
         DealCardsWrapper wrapper = new DealCardsWrapper(cards);

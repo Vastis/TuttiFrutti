@@ -1,6 +1,8 @@
 package cards;
 
-public class ClanCard extends Card {
+import communication.ContentWrapper;
+
+public class ClanCard extends Card implements ContentWrapper {
     public enum cardColor {
         RED,
         BLUE,
@@ -28,5 +30,10 @@ public class ClanCard extends Card {
         return value;
     }
 
-
+    @Override
+    public void print() {
+        System.out.println(this.color + " " + this.value + " " + this.getType());
+    }
+    @Override
+    public void initialize() throws NullPointerException {}
 }

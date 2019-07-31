@@ -2,6 +2,6 @@ package communication;
 
 import utils.Wrapper;
 
-public abstract class ContentWrapper extends Wrapper {
-    public abstract void print();
+public interface ContentWrapper extends Wrapper {
+    void print();
 }
