@@ -1,6 +1,6 @@
 package communication;
 
-public class OrderAssignmentWrapper extends ContentWrapper {
+public class OrderAssignmentWrapper implements ContentWrapper {
     private int order;
 
     public OrderAssignmentWrapper(){}

@@ -3,7 +3,7 @@ package communication;
 import utils.JsonParser;
 import utils.Wrapper;
 
-public class FrameWrapper extends Wrapper {
+public class FrameWrapper implements Wrapper {
     private String frameType;
     private Object content;
     private ContentWrapper contentWrapper;
@@ -33,7 +33,9 @@ public class FrameWrapper extends Wrapper {
     }
 
     public static String normalize(String json){
-        return json.replace("contentWrapper", "content");
+        return json
+                .replace("contentWrapper", "content")
+                .replace("convertedCards", "cards");
     }
 
     public void print(){

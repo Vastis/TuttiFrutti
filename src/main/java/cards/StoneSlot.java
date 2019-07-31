@@ -13,4 +13,6 @@ public class StoneSlot extends Card {
         ifTaken = false;
     }
 
+    @Override
+    public void print() {}
 }
