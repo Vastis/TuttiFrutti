@@ -1,8 +1,11 @@
 package game;
 
+import cards.StoneSlot;
+
 public class Game {
 
     private static Game game;
+    private StoneSlot[] stones;
 
     private Game(){}
 
