@@ -8,17 +8,15 @@ public class OrderAssignmentWrapper extends ContentWrapper {
         this.order = order;
     }
 
-    public int getOrder() {
-        return order;
-    }
+    @Override
+    public void initialize() throws NullPointerException {}
 
     @Override
     public void print() {
         System.out.println("Order: " + order);
     }
 
-    @Override
-    public void initialize() throws NullPointerException {
-
+    public int getOrder() {
+        return order;
     }
 }

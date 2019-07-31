@@ -13,12 +13,12 @@ public class DealCardsWrapper extends ContentWrapper {
     }
 
     @Override
-    public void print() {
-        cards.forEach(c -> System.out.println(c.getColor() + " " + c.getValue() + " " + c.getType()));
+    public void initialize() throws NullPointerException {
+
     }
 
     @Override
-    public void initialize() throws NullPointerException {
-
+    public void print() {
+        cards.forEach(c -> System.out.println(c.getColor() + " " + c.getValue() + " " + c.getType()));
     }
 }
