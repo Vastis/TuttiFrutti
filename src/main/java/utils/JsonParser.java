@@ -39,9 +39,9 @@ public class JsonParser<T extends Wrapper> {
             URL resource = JsonParser.class.getResource(filename);
             String filepath = Files.readString(new File(resource.getFile()).toPath());
             String json = toJson(jsonObject);
-            //TODO: save to file :D
             BufferedWriter writer = new BufferedWriter(new FileWriter(filepath));
             writer.write(json);
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
