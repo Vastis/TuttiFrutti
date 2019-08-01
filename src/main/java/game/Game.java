@@ -1,5 +1,7 @@
 package game;
 
+import communication.FrameWrapper;
+
 public class Game {
 
     private static Game game;
@@ -27,8 +29,8 @@ public class Game {
         //TODO
     }
 
-    public void run(String msg){
-        //TODO
+    public void run(FrameWrapper msg){
+        msg.print();
     }
 
     public void stop(){

@@ -11,11 +11,13 @@ public class SocketManager {
     private Socket socket;
     private PrintWriter writer;
     private BufferedReader reader;
+    private NetworkListener listener;
 
     public SocketManager(Socket socket) throws IOException {
         this.socket = socket;
         this.writer = new PrintWriter(socket.getOutputStream(), true);
         this.reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        this.listener = new NetworkListener(this);
     }
 
     public void write(String msg){
@@ -24,5 +26,9 @@ public class SocketManager {
 
     public String read() throws IOException {
         return this.reader.readLine();
+    }
+
+    public NetworkListener getListener() {
+        return listener;
     }
 }

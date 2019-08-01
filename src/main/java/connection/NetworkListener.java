@@ -1,6 +1,6 @@
 package connection;
 
-import communication.FrameDecoder;
+import communication.FrameManager;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ public class NetworkListener extends Thread {
         while(true){
             try {
                 String msg = this.socketManager.read().trim();
-                FrameDecoder.decode(msg);
+                FrameManager.decode(msg);
             } catch (IOException e) {
                 e.printStackTrace();
             }

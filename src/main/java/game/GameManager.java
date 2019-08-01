@@ -1,5 +1,7 @@
 package game;
 
+import communication.FrameManager;
+import communication.FrameWrapper;
 import connection.Server;
 import connection.SocketManager;
 
@@ -26,15 +28,16 @@ public class GameManager extends Server {
                 case IDLE:
                     break;
                 case INIT:
-                    choosePlayersOrder();
+                    //choosePlayersOrder();
+                    this.playerMoving = this.clients.get(0);
                     Game.getInstance().start();
                     this.state = AppState.RUNNING;
                     break;
                 case RUNNING:
                     try {
-                        String playerResponse = manageResponse();
+                        FrameWrapper playerResponse = manageResponse();
                         Game.getInstance().run(playerResponse);
-                        swapPlayers();
+                        //swapPlayers();
                     } catch (IOException e){
                         e.printStackTrace();
                     }
@@ -51,9 +54,9 @@ public class GameManager extends Server {
         }
     }
 
-    private String manageResponse() throws IOException {
-        //String response = this.playerMoving.read();
-        return "";
+    private FrameWrapper manageResponse() throws IOException {
+        String response = this.playerMoving.read();
+        return FrameManager.decode(response);
     }
 
     private void choosePlayersOrder() {

@@ -35,9 +35,10 @@ public class Server extends Thread {
     }
 
     private void awaitConnections() throws IOException {
-        for(int i = 1; i <= this.clientsAvailable; i++){
+        /*for(int i = 1; i <= this.clientsAvailable; i++){
             Log.write("Waiting for player " + i);
             this.clients.add(new SocketManager(socket.accept()));
-        }
+        }*/
+        /*tmp*/this.clients.add(new SocketManager(socket.accept()));
     }
 }
