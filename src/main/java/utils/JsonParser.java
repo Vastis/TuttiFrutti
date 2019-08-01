@@ -2,7 +2,9 @@ package utils;
 
 import com.google.gson.Gson;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -38,6 +40,8 @@ public class JsonParser<T extends Wrapper> {
             String filepath = Files.readString(new File(resource.getFile()).toPath());
             String json = toJson(jsonObject);
             //TODO: save to file :D
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filepath));
+            writer.write(json);
         } catch (IOException e) {
             e.printStackTrace();
         }
