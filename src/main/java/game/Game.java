@@ -4,7 +4,6 @@ import cards.StoneSlot;
 import communication.FrameWrapper;
 import cards.Card;
 import cards.Deck;
-import cards.StoneCard;
 
 public class Game {
 
